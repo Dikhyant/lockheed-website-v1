@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: DIN W01 Regular;
+        src: url(../../static/fonts/dinot.woff) format('woff') ;
+    }
+}

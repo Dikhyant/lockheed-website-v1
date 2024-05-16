@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        din: ["DIN W01 Regular", "Arial", "sans-serif"],
+      },
       colors: {
         brand: {
           "medium-persian-blue": "#0360ae",
