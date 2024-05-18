@@ -3,7 +3,7 @@ import Header from "../components/common/Header/Header";
 
 const CareerPage: React.FC<any> = () => {
   return (
-    <div className="h-screen bg-black">
+    <div className="h-[200vh] bg-black">
       <Header />
     </div>
   );

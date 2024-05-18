@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="11px" viewBox="0 0 16 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>System/Icon/Arrow/Thin/Gray/LRight</title>
+    <g id="System/Icon/Arrow/Thin/Gray/LRight" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="Group" transform="translate(8.500000, 5.500000) scale(-1, -1) translate(-8.500000, -5.500000) translate(1.000000, 0.000000)">
+            <line x1="14.5" y1="5.5" x2="2.5" y2="5.5" id="Line-Copy" stroke="#666666"></line>
+            <line x1="0.5" y1="5.5" x2="6.5" y2="0.5" id="Line-2-Copy-3" stroke="#666660"></line>
+            <line x1="0.5" y1="5.5" x2="6.5" y2="10.5" id="Line-2-Copy-2" stroke="#666660"></line>
+        </g>
+    </g>
+</svg>
