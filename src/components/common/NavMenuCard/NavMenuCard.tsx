@@ -7,6 +7,8 @@ interface NavMenuCardProps {
   className?: string;
   navSections: NavSectionProps[];
   onChange?: (navItemsState: NavItemState[]) => void;
+  onMenuCloseButtonClicked?: () => void;
+  onBackButtonClicked?: () => void;
 }
 
 interface NavSectionProps {
@@ -32,6 +34,8 @@ const NavMenuCard: React.FC<NavMenuCardProps> = ({
   className,
   navSections,
   onChange,
+  onMenuCloseButtonClicked,
+  onBackButtonClicked,
 }) => {
   const [navItemsState, setNavItemsState] = useState<NavItemState[]>(
     ((): NavItemState[] => {
@@ -74,17 +78,29 @@ const NavMenuCard: React.FC<NavMenuCardProps> = ({
   return (
     <div
       className={cn(
-        "min-h-[70vh] bg-brand-concrete p-[15px] leading-6",
+        "min-h-[100vh] lg:min-h-[70vh] top-0 max-w-[75%] bg-brand-concrete p-[15px] leading-6 absolute lg:relative",
         className,
       )}
     >
+      <div className="flex justify-between mb-8 lg:hidden">
+        <a
+          onClick={onBackButtonClicked ?? onBackButtonClicked}
+          className="uppercase bg-arrow-left-thinner-black bg-no-repeat bg-[left_0_center] bg-[length:1rem] pl-6 underline my-4"
+        >
+          Back
+        </a>
+        <button
+          onClick={onMenuCloseButtonClicked ?? onMenuCloseButtonClicked}
+          className="bg-custom-close bg-no-repeat bg-center bg-[length:24px_56px] h-[56px] w-6"
+        />
+      </div>
       <div className="text-[1.2rem] underline decoration-2 font-din-med">
         {title}
       </div>
       {navSections.map((navSec, index) => {
         return (
           <React.Fragment key={index}>
-            {navSec?.title ? (
+            {index > 0 ? (
               <div className="w-full border-t-brand-pastel-grey border-t mt-4"></div>
             ) : (
               <></>

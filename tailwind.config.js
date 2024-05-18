@@ -21,6 +21,8 @@ module.exports = {
         "chevron-down-black": "url('/images/icons/chevron-down-black.svg')",
         "arrow-right-thinner-gray":
           "url('/images/icons/arrow-right-thinner-gray.svg')",
+        "arrow-left-thinner-black":
+          "url('/images/icons/arrow-left-thinner-black.svg')",
         "custom-hamburger": "url('/images/icons/custom-hamburger.svg')",
         "custom-close": "url('/images/icons/custom-close.svg')",
         "search-thinner-black": "url('/images/icons/search-thinner-black.svg')",

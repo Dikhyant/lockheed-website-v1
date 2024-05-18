@@ -103,16 +103,34 @@ const Header: React.FC<any> = () => {
 
   const handleNavDrawerCloseButtonClick = () => {
     setIsNavDrawerExpanded(false);
+    setNavMenuToItemMapState((prev) => {
+      const newState = [...prev];
+      for (let i = 0; i < newState.length; i++) {
+        newState[i].isExpanded = false;
+      }
+      return newState;
+    });
   };
 
-  const handleNavItemStateChange = (state: any) => {};
-
-  const handlenavDropDownItemClick = (id: string) => {
+  const handleNavDropDownItemClick = (id: string) => {
     setNavMenuToItemMapState((prev) => {
       const newState = [...prev];
       for (let i = 0; i < newState.length; i++) {
         if (newState[i].menuItemId === id) {
           newState[i].isExpanded = !newState[i].isExpanded;
+        }
+      }
+      return newState;
+    });
+  };
+
+  const handleMenuBackButtonClick = (id: string) => {
+    setNavMenuToItemMapState((prev) => {
+      const newState = [...prev];
+      for (let i = 0; i < newState.length; i++) {
+        if (newState[i].menuId === id) {
+          newState[i].isExpanded = false;
+          return newState;
         }
       }
       return newState;
@@ -177,7 +195,7 @@ const Header: React.FC<any> = () => {
                   },
                 )}
                 onClick={() => {
-                  handlenavDropDownItemClick(item.id);
+                  handleNavDropDownItemClick(item.id);
                 }}
               >
                 {item.text}
@@ -229,6 +247,13 @@ const Header: React.FC<any> = () => {
               className={
                 "lg:max-w-[25%] w-full border-r-brand-pastel-grey border-r"
               }
+              onBackButtonClicked={() => {
+                handleMenuBackButtonClick(menu.id);
+              }}
+              onMenuCloseButtonClicked={() => {
+                console.log("Nav menu close clicked");
+                handleNavDrawerCloseButtonClick();
+              }}
               onChange={(arg) => {
                 arg.forEach((i) => {
                   setNavMenuToItemMapState((prev) => {

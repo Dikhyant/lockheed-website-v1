@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="11px" viewBox="0 0 16 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>System/Icon/Arrow/Thin/Gray/Left Copy</title>
+    <g id="System/Icon/Arrow/Thin/Gray/Left-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <line x1="15.5" y1="5.5" x2="3.5" y2="5.5" id="Line" stroke="#000"></line>
+        <line x1="1.5" y1="5.5" x2="7.5" y2="0.5" id="Line-2" stroke="#000"></line>
+        <line x1="1.5" y1="5.5" x2="7.5" y2="10.5" id="Line-2-Copy" stroke="#000"></line>
+    </g>
+</svg>
