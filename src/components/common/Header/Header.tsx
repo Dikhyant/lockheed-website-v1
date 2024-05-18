@@ -4,30 +4,31 @@ import SearchIcon from "./SearchIcon";
 import GlobeIcon from "./GlobeIcon";
 import NavMenuCard from "../NavMenuCard/NavMenuCard";
 import { cn } from "../../../utils/misc";
+import { navMenus, navMenuToItemMap } from "./nav-menu-data";
 
 type HeaderLinks = {
   text: string;
   href: string;
 };
 
-type NavMenuProps = React.ComponentProps<typeof NavMenuCard>;
+function dummy() {}
 
-type NavSectionProps = NavMenuProps["navSections"][number];
-
-type NavMenuAddress = {
-  id: string;
-  navMenu: NavMenuProps;
-};
+type TNavMenuProps = React.ComponentProps<typeof NavMenuCard>;
+type TNavSectionProps = TNavMenuProps["navSections"][number];
 
 type HeaderDropDownText = {
+  id: string;
   text: string;
+  isExpanded?: boolean;
 };
 
 const headerDropDownTexts: HeaderDropDownText[] = [
   {
+    id: "Who we are-item-1",
     text: "Who we are",
   },
   {
+    id: "What we do-item-1",
     text: "What we do",
   },
 ];
@@ -51,7 +52,7 @@ const headerLinks: HeaderLinks[] = [
   },
 ];
 
-const navSections: NavSectionProps[] = [
+const navSections: TNavSectionProps[] = [
   {
     navItems: [
       {
@@ -93,6 +94,8 @@ const navSections: NavSectionProps[] = [
 
 const Header: React.FC<any> = () => {
   const [isNavDrawerExpanded, setIsNavDrawerExpanded] = useState(false);
+  const [navMenuToItemMapState, setNavMenuToItemMapState] =
+    useState(navMenuToItemMap);
 
   const handleNavDrawerOpenButtonClick = () => {
     setIsNavDrawerExpanded(true);
@@ -100,6 +103,20 @@ const Header: React.FC<any> = () => {
 
   const handleNavDrawerCloseButtonClick = () => {
     setIsNavDrawerExpanded(false);
+  };
+
+  const handleNavItemStateChange = (state: any) => {};
+
+  const handlenavDropDownItemClick = (id: string) => {
+    setNavMenuToItemMapState((prev) => {
+      const newState = [...prev];
+      for (let i = 0; i < newState.length; i++) {
+        if (newState[i].menuItemId === id) {
+          newState[i].isExpanded = !newState[i].isExpanded;
+        }
+      }
+      return newState;
+    });
   };
 
   return (
@@ -146,10 +163,22 @@ const Header: React.FC<any> = () => {
             />
           </div>
           {headerDropDownTexts.map((item) => {
+            const isExpanded = navMenuToItemMap.find(
+              (i) => i.menuItemId === item.id,
+            )?.isExpanded as boolean;
             return (
               <a
                 href={"#"}
-                className="focus:font-bold focus:text-brand-medium-persian-blue bg-arrow-right-thinner-gray lg:bg-chevron-down-black pt-[2.5px] bg-no-repeat bg-[length:16px_11px] lg:bg-[length:0.6rem] bg-[right_1em_center] lg:bg-right lg:h-[30px] pr-[17px] mt-4 lg:mt-[12.8px]"
+                aria-expanded={isExpanded}
+                className={cn(
+                  "bg-arrow-right-thinner-gray lg:bg-chevron-down-black pt-[2.5px] bg-no-repeat bg-[length:16px_11px] lg:bg-[length:0.6rem] bg-[right_1em_center] lg:bg-right lg:h-[30px] pr-[17px] mt-4 lg:mt-[12.8px]",
+                  {
+                    "font-bold text-brand-medium-persian-blue": isExpanded,
+                  },
+                )}
+                onClick={() => {
+                  handlenavDropDownItemClick(item.id);
+                }}
               >
                 {item.text}
               </a>
@@ -186,11 +215,36 @@ const Header: React.FC<any> = () => {
             </a>
           </div>
         </div>
-        {/*<NavMenuCard
-          title={"Who we are"}
-          className="w-1/4"
-          navSections={navSections}
-        />*/}
+        {navMenus.map((menu) => {
+          const isExpanded = navMenuToItemMap.find(
+            (item) => item.menuId === menu.id,
+          )?.isExpanded as boolean;
+          if (!isExpanded) return <React.Fragment key={menu.id} />;
+          return (
+            <NavMenuCard
+              key={menu.id}
+              id={menu.id}
+              title={menu.title}
+              navSections={menu.navSections}
+              className={
+                "lg:max-w-[25%] w-full border-r-brand-pastel-grey border-r"
+              }
+              onChange={(arg) => {
+                arg.forEach((i) => {
+                  setNavMenuToItemMapState((prev) => {
+                    const newState = [...prev];
+                    for (let j = 0; j < newState.length; j++) {
+                      if (newState[j].menuItemId === i.id) {
+                        newState[j].isExpanded = i.isExpanded;
+                      }
+                    }
+                    return newState;
+                  });
+                });
+              }}
+            />
+          );
+        })}
       </div>
     </header>
   );
