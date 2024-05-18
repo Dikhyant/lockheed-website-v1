@@ -16,4 +16,18 @@
         src: url(../../static/fonts/dinot-medium.woff) format('woff');
     }
 
+    @font-face {
+        font-family: DIN W01-Light;
+        font-style: normal;
+        font-weight: 400;
+        unicode-range: U+000D-FEFF;
+        src: url(../../static/fonts/dinot-light.woff) format('woff');
+    }
+
+}
+
+@layer utilities {
+    .gradient-bottom-left-top-right {
+        background: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.5) 64%, rgba(0, 0, 0, 0.7) 100%);;
+    }
 }

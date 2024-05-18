@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         din: ["DIN W01 Regular", "Arial", "sans-serif"],
         "din-med": ["DIN OT-Medium-KzgHMRnb", "Arial", "sans-serif"],
+        "din-light": ["DIN W01-Light", "Arial", "sans-serif"],
       },
       colors: {
         brand: {
@@ -26,6 +27,8 @@ module.exports = {
         "custom-hamburger": "url('/images/icons/custom-hamburger.svg')",
         "custom-close": "url('/images/icons/custom-close.svg')",
         "search-thinner-black": "url('/images/icons/search-thinner-black.svg')",
+        "Employer-Band-Canberra-home-1920":
+          "url('/images/Employer-Band-Canberra-home-1920.jpg')",
       },
     },
   },
