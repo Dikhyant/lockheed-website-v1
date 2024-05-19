@@ -34,6 +34,8 @@ module.exports = {
         "search-thinner-black": "url('/images/icons/search-thinner-black.svg')",
         "Employer-Band-Canberra-home-1920":
           "url('/images/Employer-Band-Canberra-home-1920.jpg')",
+        "plus-solid": "url('/images/icons/plus-solid.svg')",
+        "minus-solid": "url('/images/icons/minus-solid.svg')",
       },
     },
   },
