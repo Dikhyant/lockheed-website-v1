@@ -14,14 +14,19 @@ module.exports = {
       colors: {
         brand: {
           "medium-persian-blue": "#0360ae",
+          "medium-teal-blue": "#0260AF",
           concrete: "#f2f2f2",
           "pastel-grey": "#cccccc",
+          silver: "c9c9c9",
+          granite: "#808080",
         },
       },
       backgroundImage: {
         "chevron-down-black": "url('/images/icons/chevron-down-black.svg')",
         "arrow-right-thinner-gray":
           "url('/images/icons/arrow-right-thinner-gray.svg')",
+        "arrow-right-solid-white":
+          "url('/images/icons/arrow-right-solid-white.svg')",
         "arrow-left-thinner-black":
           "url('/images/icons/arrow-left-thinner-black.svg')",
         "custom-hamburger": "url('/images/icons/custom-hamburger.svg')",
