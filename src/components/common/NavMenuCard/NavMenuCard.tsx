@@ -78,7 +78,7 @@ const NavMenuCard: React.FC<NavMenuCardProps> = ({
   return (
     <div
       className={cn(
-        "min-h-[100vh] lg:min-h-[70vh] top-0 max-w-[75%] bg-brand-concrete p-[15px] leading-6 absolute lg:relative",
+        "min-h-[100vh] z-30 lg:min-h-[70vh] top-0 max-w-[75%] bg-brand-concrete p-[15px] leading-6 absolute lg:relative",
         className,
       )}
     >

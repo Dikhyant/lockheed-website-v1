@@ -162,7 +162,7 @@ const Header: React.FC<any> = () => {
       <div className="flex flex-wrap max-w-[1600px] mx-auto h-0 lg:h-full">
         <div
           className={cn(
-            "flex flex-col bg-white border-r-brand-pastel-grey border-r-[0.914286px] lg:border-none top-0 absolute lg:relative max-w-[75%] lg:max-w-full -translate-x-full lg:translate-x-0 lg:flex-row w-full justify-between px-[15px] lg:px-12 py-[15px] min-h-[100vh] lg:min-h-[80px] lg:h-full",
+            "flex flex-col z-30 bg-white border-r-brand-pastel-grey border-r-[0.914286px] lg:border-none top-0 absolute lg:relative max-w-[75%] lg:max-w-full -translate-x-full lg:translate-x-0 lg:flex-row w-full justify-between px-[15px] lg:px-12 py-[15px] min-h-[100vh] lg:min-h-[80px] lg:h-full",
             {
               "translate-x-0": isNavDrawerExpanded,
             },
