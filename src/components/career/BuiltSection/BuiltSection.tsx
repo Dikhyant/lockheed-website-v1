@@ -11,7 +11,7 @@ const BuiltSection: React.FC<any> = () => {
             coverImageUrl={data?.coverImageUrl}
             text={data?.text}
             subText={data?.subText}
-            className="basis-12/12 lg:basis-4/12 mt-12"
+            className="basis-12/12 lg:basis-4/12 mt-12 pb-4 md:pb-0"
           />
         );
       })}
