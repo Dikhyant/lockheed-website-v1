@@ -4,6 +4,7 @@ import Banner from "../components/common/Banner/Banner";
 import SearchJobsForm from "../components/SearchJobsForm/SearchJobsForm";
 import CareerAccordion from "../components/CareerAccordion/CareerAccordion";
 import BuiltSection from "../components/career/BuiltSection/BuiltSection";
+import FeaturedCareers from "../components/career/FeaturedCareers/FeaturedCareers";
 
 const CareerPage: React.FC<any> = () => {
   return (
@@ -18,6 +19,7 @@ const CareerPage: React.FC<any> = () => {
           Why join us? Learn more
         </a>
       </div>
+      <FeaturedCareers />
     </div>
   );
 };
