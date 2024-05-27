@@ -1,4 +1,6 @@
 import React from "react";
+import Carousel from "../../common/Carousel/Carousel";
+import CarouselItem from "./CarouselItem";
 
 type ICarouselAndTextGroupProps = {
   title: string;
@@ -6,6 +8,48 @@ type ICarouselAndTextGroupProps = {
   smallText: string;
   buttonText: string;
 };
+
+type TCarouselItem = React.ComponentProps<typeof CarouselItem>;
+type TCarouselProps = React.ComponentProps<typeof Carousel>;
+
+const d = () => {
+  return <></>;
+};
+const c = <></>;
+
+const carouselItemsData: TCarouselItem[] = [
+  {
+    imageMaxSmUrl:
+      "/images/careers/career-areas/2022_12_15LockheedMartin-103.jpg.pc-adaptive.480.medium.jpg",
+    imageSmUrl:
+      "/images/careers/career-areas/2022_12_15LockheedMartin-103.jpg.pc-adaptive.480.medium.jpg",
+    imageMdUrl:
+      "/images/careers/career-areas/2022_12_15LockheedMartin-103.jpg.pc-adaptive.480.medium.jpg",
+    imageLgUrl:
+      "/images/careers/career-areas/2022_12_15LockheedMartin-103.jpg.pc-adaptive.990.medium.jpg",
+    imageXlUrl:
+      "/images/careers/career-areas/2022_12_15LockheedMartin-103.jpg.pc-adaptive.1280.medium.jpg",
+    text: "Cyber Security & Intelligence",
+    subtext:
+      "Deliver full-spectrum cyber capabilities and cyber resilient systems.",
+  },
+];
+
+const carouselItems: TCarouselProps["carouselItems"] = carouselItemsData.map(
+  (item) => {
+    return (
+      <CarouselItem
+        imageMaxSmUrl={item.imageMaxSmUrl}
+        imageSmUrl={item.imageSmUrl}
+        imageMdUrl={item.imageMdUrl}
+        imageLgUrl={item.imageLgUrl}
+        imageXlUrl={item.imageXlUrl}
+        text={item.text}
+        subtext={item.subtext}
+      />
+    );
+  },
+);
 
 const CarouselAndTextGroup: React.FC<ICarouselAndTextGroupProps> = ({
   title,
@@ -37,7 +81,9 @@ const CarouselAndTextGroup: React.FC<ICarouselAndTextGroupProps> = ({
               {buttonText}
             </a>
           </div>
-          <div className="basis-6/12"></div>
+          <div className="basis-6/12 mt-12 px-[15px]">
+            <Carousel carouselItems={carouselItems} />
+          </div>
         </div>
       </div>
     </div>

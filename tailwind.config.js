@@ -19,6 +19,7 @@ module.exports = {
           "pastel-grey": "#cccccc",
           silver: "c9c9c9",
           granite: "#808080",
+          seashell: "#f1f1f1",
         },
       },
       backgroundImage: {
@@ -27,8 +28,14 @@ module.exports = {
           "url('/images/icons/arrow-right-thinner-gray.svg')",
         "arrow-right-solid-white":
           "url('/images/icons/arrow-right-solid-white.svg')",
+        "arrow-right-solid-blue":
+          "url('/images/icons/arrow-right-solid-blue.svg')",
         "arrow-left-thinner-black":
           "url('/images/icons/arrow-left-thinner-black.svg')",
+        "arrow-left-solid-white":
+          "url('/images/icons/arrow-left-solid-white.svg')",
+        "arrow-left-solid-blue":
+          "url('/images/icons/arrow-left-solid-blue.svg')",
         "custom-hamburger": "url('/images/icons/custom-hamburger.svg')",
         "custom-close": "url('/images/icons/custom-close.svg')",
         "search-thinner-black": "url('/images/icons/search-thinner-black.svg')",
